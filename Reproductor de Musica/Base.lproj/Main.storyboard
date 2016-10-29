@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reproductor_de_Musica" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una canción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eJ-FN-9CP">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="sG0-qw-ZvI">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Tocar"/>
+                                    <segment title="Pausar"/>
+                                    <segment title="Detener"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.89178636560000002" blue="0.33294458840000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="reproduccionCancion:" destination="BYZ-38-t0r" eventType="valueChanged" id="91i-EB-UJm"/>
+                                </connections>
+                            </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-qP-lsJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="yRA-sZ-n7B"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1Ja-Bj-Vxs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ENd-VY-EQf"/>
+                                </connections>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abre tu corazón.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-Rm-bCc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="amD-0q-tyh"/>
+                                    <constraint firstAttribute="width" constant="200" id="nmj-AM-PUC"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vZQ-Zw-Rxo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nfu-Ye-TNO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="volumenCancion:" destination="BYZ-38-t0r" eventType="valueChanged" id="kie-JA-jEl"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hbZ-Bv-ajr">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ZOp-ON-Zx6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Consecutivo"/>
+                                    <segment title="Aleatorio"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="01G-7O-M88"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="centerX" secondItem="vcT-Rm-bCc" secondAttribute="centerX" constant="-48" id="028-H5-7Yk"/>
+                            <constraint firstItem="sG0-qw-ZvI" firstAttribute="top" secondItem="hbZ-Bv-ajr" secondAttribute="bottom" constant="16" id="0Iy-pA-Svl"/>
+                            <constraint firstItem="vZQ-Zw-Rxo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="78" id="53G-iB-efS"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="top" secondItem="4eJ-FN-9CP" secondAttribute="bottom" constant="8" id="6Ek-jq-sCU"/>
+                            <constraint firstItem="4eJ-FN-9CP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7K4-7R-qZz"/>
+                            <constraint firstItem="sG0-qw-ZvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CTB-ak-39V"/>
+                            <constraint firstItem="hbZ-Bv-ajr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLW-Us-q9T"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MTw-c2-WON"/>
+                            <constraint firstItem="vZQ-Zw-Rxo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N9c-yD-bg5"/>
+                            <constraint firstItem="vcT-Rm-bCc" firstAttribute="top" secondItem="oAT-qP-lsJ" secondAttribute="bottom" constant="8" symbolic="YES" id="OjK-1P-fzX"/>
+                            <constraint firstItem="hbZ-Bv-ajr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="81" id="RF2-yl-AJT"/>
+                            <constraint firstItem="4eJ-FN-9CP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cga-AJ-Lmq"/>
+                            <constraint firstItem="hbZ-Bv-ajr" firstAttribute="top" secondItem="vcT-Rm-bCc" secondAttribute="bottom" constant="17" id="dpn-NZ-qKr"/>
+                            <constraint firstItem="4eJ-FN-9CP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dwh-7q-Iou"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="e7B-Sl-4D4"/>
+                            <constraint firstItem="vZQ-Zw-Rxo" firstAttribute="top" secondItem="sG0-qw-ZvI" secondAttribute="bottom" constant="8" symbolic="YES" id="jBz-En-0Fk"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jH7-ye-70H"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jP6-at-aYL"/>
+                            <constraint firstItem="vcT-Rm-bCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lsw-kY-D0Z"/>
+                            <constraint firstItem="oAT-qP-lsJ" firstAttribute="centerX" secondItem="4eJ-FN-9CP" secondAttribute="centerX" id="mea-O6-6I8"/>
+                            <constraint firstItem="hbZ-Bv-ajr" firstAttribute="leading" secondItem="sG0-qw-ZvI" secondAttribute="leading" id="tA0-cY-gwf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vZQ-Zw-Rxo" secondAttribute="bottom" constant="158" id="yHE-1p-330"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="01G-7O-M88"/>
+                                <exclude reference="028-H5-7Yk"/>
+                                <exclude reference="e7B-Sl-4D4"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="Opciones" destination="oAT-qP-lsJ" id="i1M-r6-rbv"/>
+                        <outlet property="Portada" destination="vcT-Rm-bCc" id="ynb-sv-icc"/>
+                        <outlet property="botonOrden" destination="hbZ-Bv-ajr" id="I4a-Ne-R8f"/>
+                        <outlet property="botonReproduccion" destination="sG0-qw-ZvI" id="BIh-eB-ybG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="351.27436281859076"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Abre tu corazón.jpg" width="300" height="300"/>
+    </resources>
+</document>
